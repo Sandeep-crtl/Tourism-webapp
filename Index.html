@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@400;700&family=Arizonia&family=Berkshire+Swash&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa:wght@300..700&family=Creepster&family=Dancing+Script:wght@400..700&family=Dawning+of+a+New+Day&family=Ephesis&family=Gloria+Hallelujah&family=Gravitas+One&family=Great+Vibes&family=Grenze+Gotisch:wght@100..900&family=Homemade+Apple&family=Hurricane&family=IM+Fell+DW+Pica:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Julius+Sans+One&family=Kaushan+Script&family=Kristi&family=Lexend+Deca:wght@100..900&family=Libre+Barcode+39&family=Manufacturing+Consent&family=Marck+Script&family=Merienda:wght@300..900&family=Monsieur+La+Doulaise&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mr+De+Haviland&family=Mrs+Saint+Delafield&family=Oleo+Script:wght@400;700&family=Outfit:wght@100..900&family=Parisienne&family=Patrick+Hand&family=Permanent+Marker&family=Pinyon+Script&family=Playwrite+AU+QLD:wght@100..400&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Qwigley&family=Rock+Salt&family=Rouge+Script&family=Rye&family=Sacramento&family=Satisfy&family=Smooch+Sans:wght@100..900&family=Sora:wght@100..800&family=Special+Elite&family=Syncopate:wght@400;700&family=Tangerine:wght@400;700&family=Unbounded:wght@200..900&family=VT323&family=Whisper&family=WindSong:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .centered-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-text-mask {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-text-mask video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .video-text-mask h2 {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: lighter;
+            text-align: center;
+            font-family: "Pinyon Script";
+        }
+
+        .video-text-mask ul {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-align: center;
+            font-family: "Poppins";
+            display: flex;
+            list-style: none;
+            gap: 80px;
+        }
+
+        .video-text-mask ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .video-text-mask h1 {
+            position: relative;
+            top: 80px;
+            /* Adjust as needed */
+            z-index: 2;
+            color: #fff;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            font-family: "Kaushan Script";
+        }
+
+        .video-text-mask button {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            color: #fff;
+            background: transparent;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .About-Section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 0;
+            height: 100vh;
+        }
+
+        .About-Left {
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: #222;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px 0 0 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            min-width: 300px;
+
+        }
+
+        .About-Header {
+            font-family: 'Poiret One';
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 18px;
+        }
+
+        .About-Description {
+            font-weight: 250;
+        }
+
+        .About-Description-Span {
+            color: red;
+            font-size: xx-large;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .About-Description-Bottom {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 250;
+        }
+
+        .About-Right {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+
+        .Image-tag {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px 12px;
+        }
+
+        .Services-Section {
+            margin: 0;
+            font-family: 'Poppins';
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Services-Header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 40px;
+        }
+
+        .Services-h1 {
+            font-family: 'Poiret One';
+            font-weight: bold;
+            color: #000;
+        }
+
+        .Show-All-Button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .Cards-Container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 40px;
+            overflow: hidden;
+        }
+
+        .Taj-Mahal-Card {
+            width: 22%;
+            min-width: 300px;
+            height: 480px;
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .Taj-Mahal-Card-Image {
+            width: 100%;
+            border-radius: 12px;
+            max-height: 180px;
+            object-fit: cover;
+        }
+
+        .Taj-Mahal-Card-Title {
+            font-family: 'IM Fell DW Pica', cursive;
+            font-size: 24px;
+        }
+
+        .Taj-Mahal-Card-Location {
+            font-family: 'Sacramento', cursive;
+            font-size: 24px;
+            color: rgb(128, 126, 126);
+        }
+
+        .Taj-Mahal-Card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .Taj-Mahal-Card button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .Charminar-Card {
+            width: 22%;
+            min-width: 260px;
+            height: 100%;
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .Charminar-Card img {
+            width: 100%;
+            border-radius: 12px;
+            max-height: 180px;
+            object-fit: cover;
+
+        }
+
+        .Charminar-Title {
+            font-family: 'IM Fell DW Pica', cursive;
+            font-size: 24px;
+        }
+
+        .Charminar-Place {
+            font-family: 'Sacramento', cursive;
+            font-size: 24px;
+            color: rgb(128, 126, 126);
+        }
+
+        .Charminar-Card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .Charminar-Card button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .Kedarnath-Card {
+            width: 22%;
+            min-width: 260px;
+            height: 100%;
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .Kedarnath-Card img {
+            width: 100%;
+            border-radius: 12px;
+            max-height: 180px;
+            object-fit: cover;
+        }
+
+        .Kedarnath-Title {
+            font-family: 'IM Fell DW Pica', cursive;
+            font-size: 24px;
+        }
+
+        .Kedarnath-Place {
+            font-family: 'Sacramento', cursive;
+            font-size: 24px;
+            color: rgb(128, 126, 126);
+        }
+
+        .Kedarnath-Card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .Kedarnath-Card button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .Badrinath-Card {
+            width: 22%;
+            min-width: 260px;
+            height: 100%;
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .Badrinath-Card img {
+            width: 100%;
+            border-radius: 12px;
+            max-height: 180px;
+            object-fit: cover;
+        }
+
+        .Badrinath-Title {
+            font-family: 'IM Fell DW Pica', cursive;
+            font-size: 24px;
+        }
+
+        .Badrinath-Place {
+            font-family: 'Sacramento', cursive;
+            font-size: 24px;
+            color: rgb(128, 126, 126);
+        }
+
+        .Badrinath-Card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .Badrinath-Card button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Responsive for Tablets (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .video-text-mask h1 {
+                font-size: 2.5rem;
+                top: 60px;
+                padding: 0 20px;
+            }
+
+            .video-text-mask ul {
+                gap: 40px;
+                font-size: 1rem;
+                top: 80px;
+            }
+
+            .About-Section {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+
+            .About-Left,
+            .About-Right {
+                border-radius: 12px;
+                margin: 10px 0;
+                width: 100%;
+                padding: 20px;
+            }
+
+            .Services-Header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 20px;
+            }
+
+            .Cards-Container {
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .Taj-Mahal-Card,
+            .Charminar-Card,
+            .Kedarnath-Card,
+            .Badrinath-Card {
+                width: 45%;
+                height: auto;
+            }
+
+            footer div {
+                flex-direction: column;
+                gap: 10px;
+                text-align: left;
+            }
+        }
+
+        /* Tablet & below */
+        @media (max-width: 768px) {
+
+            /* Let the services section grow vertically */
+            .Services-Section {
+                height: auto;
+                overflow: visible;
+            }
+
+            /* Stack all cards in one column */
+            .Cards-Container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+                padding: 20px 45px;
+
+            }
+
+            /* Adjust card img height */
+
+            .Cards-Container>div img {
+                max-height: 300px;
+            }
+
+
+
+            /* Catch ALL cards, no matter the class name */
+            .Cards-Container>div {
+                width: 100% !important;
+                max-width: 100%;
+                height: 500px;
+                margin: 0;
+            }
+
+            /* Optional: tighten texts/buttons for smaller widths */
+            .Cards-Container>div p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .Cards-Container>div button {
+                width: 100%;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                overflow-x: hidden;
+                width: 100%;
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: inherit;
+            }
+
+            .video-text-mask {
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .video-text-mask h2 {
+                font-size: 1.6rem;
+                top: 16px;
+            }
+
+            .video-text-mask ul {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
+                color: #fff;
+                list-style: none;
+                gap: 12px;
+                top: 56px;
+                font-size: 0.85rem;
+                padding: 0;
+                margin: 0;
+            }
+
+            .video-text-mask h1 {
+                font-size: 1.4rem;
+                top: 130px;
+                padding: 0 12px;
+            }
+
+            .video-text-mask button {
+                bottom: 40px;
+                font-size: 0.95rem;
+                padding: 6px 12px;
+            }
+
+            .About-Section {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 12px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .About-Left,
+            .About-Right {
+                width: 100%;
+                border-radius: 12px;
+                padding: 16px;
+                margin: 0 auto;
+            }
+
+            .Cards-Container {
+                padding: 16px 0;
+                /* Removed horizontal padding */
+                gap: 16px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .Cards-Container>div {
+                width: 100% !important;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            footer {
+                font-size: 0.9rem;
+                padding: 16px 12px;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="centered-container">
+        <div class="video-text-mask">
+            <video src="TAJ MAHAL ● India 【4K】 Cinematic [2021] - 2160.mp4" autoplay loop muted playsinline></video>
+            <h2>Indian-Tourism</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <h1>Let's Explore The India Together</h1>
+            <button>EXPLORE MORE CITIES</button>
+        </div>
+    </div>
+    <div class="About-Section">
+        <div class="About-Left">
+            <h1 class="About-Header">
+                About Indian
+                Tourism
+            </h1>
+            <p class="About-Description">
+                <span class="About-Description-Span">I</span>ndia,
+                a land of vibrant cultures, ancient
+                heritage,
+                and breathtaking
+                landscapes, offers an
+                unforgettable
+                journey for every traveler. From the majestic Himalayas in the north to the serene backwaters of Kerala
+                in
+                the south, India is a tapestry of traditions, festivals, and architectural marvels. Explore iconic
+                monuments
+                like the Taj Mahal, experience the spiritual aura of Varanasi, and savor the diverse cuisines across its
+                regions. Whether you seek adventure, history, or tranquility, Indian tourism promises a unique and
+                enriching
+                experience at every turn.
+            </p>
+            <p class="About-Description-Bottom">
+                With its rich tapestry of cultures, languages, and traditions, India offers a unique blend of
+                experiences
+                that
+                cater to every traveler's interests. From the bustling markets of Delhi to the serene beaches of Goa,
+                each
+                destination tells a story waiting to be explored.
+            </p>
+        </div>
+        <div class="About-Right">
+            <img src="Most-Searched-Tourist-Places-in-India-2025.webp" alt="Indian Tourism" class="Image-tag">
+        </div>
+    </div>
+
+    <div class="Services-Section">
+
+        <!-- Header Section -->
+        <div class="Services-Header">
+            <h1 class="Services-h1">
+                Services-The Tourism Destination
+            </h1>
+            <button class="Show-All-Button">
+                Show All
+            </button>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="Cards-Container">
+
+            <!-- Taj Mahal -->
+            <div class="Taj-Mahal-Card">
+                <img src="steptodown.com472584.jpg" alt="Taj Mahal" class="Taj-Mahal-Card-Image">
+                <h2 class="Taj-Mahal-Card-Title">Taj Mahal</h2>
+                <h2 class="Taj-Mahal-Card-Location">
+                    Agra, Uttar
+                    Pradesh</h2>
+                <p>One of the Seven Wonders of the World, the Taj Mahal in Agra is
+                    a symbol of eternal love, built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal.</p>
+                <button>
+                    Explore
+                </button>
+            </div>
+
+            <!-- Charminar -->
+            <div class="Charminar-Card">
+                <img src="steptodown.com742862.jpg" alt="Charminar">
+                <h2 class="Charminar-Title" style="font-family: 'IM Fell DW Pica', cursive; font-size: 24px; ">Charminar
+                </h2>
+                <h2 class="Charminar-Place"
+                    style="font-family: 'Sacramento', cursive; font-size: 24px; color:rgb(128, 126, 126)">
+                    Hyderabad, Telangana</h2>
+                <p>Located in the heart of Hyderabad, the Charminar is a
+                    16th-century mosque and monument known for its four grand minarets and vibrant local markets.</p>
+                <button>
+                    Explore
+                </button>
+            </div>
+
+            <!-- Kedarnath -->
+            <div class="Kedarnath-Card">
+                <img src="steptodown.com450584.jpg" alt="Kedarnath">
+                <h2 class="Kedarnath-Title">Kedarnath
+                </h2>
+                <h2 class="Kedarnath-Place">
+                    Uttarakhand</h2>
+                <p>Situated in the Himalayas, Kedarnath is one of the most sacred
+                    Hindu temples dedicated to Lord Shiva. It's part of the Char Dham pilgrimage circuit.</p>
+                <button>
+                    Explore
+                </button>
+            </div>
+
+            <!-- Badrinath -->
+            <div class="Badrinath-Card">
+                <img src="steptodown.com551089.jpg" alt="Badrinath">
+                <h2 class="Badrinath-Title">Badrinath
+                </h2>
+                <h2 class="Badrinath-Place">
+                    Uttarakhand</h2>
+                <p>Badrinath is a sacred town nestled between Nar and Narayan
+                    mountain ranges, famous for the Badrinath Temple dedicated to Lord Vishnu.</p>
+                <button>
+                    Explore
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div style=" background: #f7f7f7;"></div>
+    <h1 style="font-family: 'Poiret One', cursive; font-size: 2.5rem; color: #222; padding:40px">
+        Gallery
+    </h1>
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+        <img src="steptodown.com292177.jpg" alt="Gallery Image 1"
+            style="width: 450px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <img src="steptodown.com953993.jpg" alt="Gallery Image 2"
+            style="width: 450px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <img src="steptodown.com779431.jpg" alt="Gallery Image 3"
+            style="width: 450px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+
+    </div>
+    </div>
+
+    <footer
+        style="background: #000; color: #fff; text-align: center; padding: 20px; font-family: 'Poppins'; margin-top: 80px;">
+        <h2 style="font-family: Pinyon Script ; font-weight: lighter; font-size:xx-large;">Indian-Tourism</h2>
+        <p style="font-weight: 200; padding: 20px 0 20px 0 ;">India is one of the most diverse and culturally rich
+            countries
+            in the world,
+            making it a top destination for
+            tourists from across the globe. From the snow-covered peaks of the Himalayas in the north to the serene
+            beaches of Kerala in the south, India offers a wide variety of travel experiences.</p>
+        <div style="display: flex; justify-content: space-around; padding: 20px 0;">
+            <div>
+
+                <p style="font-weight: 200;">Contact us: <a href="mailto:support@indiantourism.in"
+                        style="color: #fff; text-decoration: none;">support@indiantourism.in</a></p>
+                <p style="font-weight: 200;">Follow us on:
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 10px;">Facebook</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 10px;">Twitter</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 10px;">Instagram</a>
+                </p>
+            </div>
+            <div>
+                <p style="font-weight: 200;">For inquiries, please call: <a href="tel:+91123456789"
+                        style="color: #fff; text-decoration: none;">+91 123
+                        456 789</a></p>
+                <p style="font-weight: 200;">Address: 123 Indian Tourism Street, New Delhi, India</p>
+            </div>
+        </div>
+        <p>&copy; 2023 Indian Tourism. All rights reserved.</p>
+
+    </footer>
+
+</body>
+
+</html>
+
+
+<!-- Steps to add this project to GitHub -->
+<!--
+1. Create a GitHub account if you don't have one.
+2. On GitHub, click "New repository" and fill in the details (name, description, public/private).
+3. On your computer, open a terminal and navigate to your project folder.
+4. Run `git init` to initialize a local git repository.
+5. Run `git add .` to stage all files.
+6. Run `git commit -m "Initial commit"` to commit your files.
+7. Copy the repository URL from GitHub.
+8. Run `git remote add origin <your-repo-url>` to link your local repo to GitHub.
+9. Run `git push -u origin main` (or `master`) to upload your code.
+-->
