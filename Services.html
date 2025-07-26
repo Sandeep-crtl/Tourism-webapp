@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Tourism</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poiret+One&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .brand {
+            font-family: "Pinyon Script", cursive;
+            font-size: 2.4rem;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #050505;
+            text-decoration: none;
+            transition: color .2s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #ff4c4c;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent);
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .Services-Section {
+            margin-top: 40px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .Services-h1 {
+            font-family: 'Poiret One';
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        /* Cards */
+        .Cards-Container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: calc(25% - 20px);
+            min-width: 260px;
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            max-height: 320px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-family: 'Poiret One';
+            font-size: 22px;
+            margin: 10px 0 5px;
+        }
+
+        .card-location {
+            font-family: 'Poiret One';
+            font-weight: bolder;
+            font-size: 18px;
+            color: rgb(128, 126, 126);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .card button:hover {
+            background-color: #333;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer h2 {
+            font-family: 'Pinyon Script';
+            font-weight: lighter;
+            font-size: xx-large;
+            margin: 10px 0;
+        }
+
+        footer p,
+        footer a {
+            color: #fff;
+            font-weight: 200;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1024px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .Services-h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-title {
+                font-size: 18px;
+            }
+
+            .card-location {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">Indian-Tourism</div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="goTo('Index.html')">Home</a></li>
+                    <li><a href="#" onclick="goTo('About.html')">About</a></li>
+                    <li><a href="#" onclick="goTo('Services.html')" class="active">Services</a></li>
+                    <li><a href="#" onclick="goTo('Gallery.html')">Gallery</a></li>
+                    <li><a href="#" onclick="goTo('Contact.html')">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="Services-Section">
+        <h1 class="Services-h1">Services - The Tourism Destination</h1>
+
+        <div class="Cards-Container">
+            <!-- Example card -->
+            <div class="card">
+                <img src="./Assets/Delhi.png" alt="Delhi">
+                <h2 class="card-title">Delhi</h2>
+                <h3 class="card-location">Red Fort, Qutub Minar, India Gate</h3>
+                <p>
+                    Delhi, India’s capital, is a vibrant mix of history and modernity. Visit landmarks like the Red
+                    Fort, Qutub Minar, and India Gate. Enjoy bustling markets, diverse cuisine, and a rich cultural
+                    scene in this dynamic city.
+                </p>
+                <button>Explore</button>
+            </div>
+            <!-- Add other cards here (same as your original code) -->
+
+            <!-- Uttar Pradesh -->
+            <div class="card">
+                <img src="./Assets/Uttar Pradesh.png" alt="Uttar Pradesh">
+                <h2 class="card-title">Uttar Pradesh</h2>
+                <h3 class="card-location">Taj Mahal (Agra), Varanasi, Fatehpur Sikri, Mathura & Vrindavan</h3>
+                <p>
+                    Uttar Pradesh blends Mughal grandeur with deep spirituality. From the timeless beauty of the Taj
+                    Mahal to the sacred ghats of Varanasi, it’s a journey through history and faith. Explore
+                    Fatehpur Sikri’s Mughal architecture and the Krishna devotion in Mathura–Vrindavan.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Rajasthan -->
+            <div class="card">
+                <img src="./Assets/Rajasthan.png" alt="Rajasthan">
+                <h2 class="card-title">Rajasthan</h2>
+                <h3 class="card-location">Jaipur, Udaipur, Jodhpur, Jaisalmer</h3>
+                <p>
+                    Rajasthan is a land of forts, palaces, deserts, and vibrant culture. Wander through Jaipur’s
+                    royal facades, Udaipur’s lakes, Jodhpur’s blue lanes, and Jaisalmer’s golden dunes. Folk music,
+                    colorful bazaars, and regal hospitality define every visit.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Uttarakhand -->
+            <div class="card">
+                <img src="./Assets/Uttarakhad.png" alt="Uttarakhand">
+                <h2 class="card-title">Uttarakhand</h2>
+                <h3 class="card-location">Kedarnath, Badrinath, Rishikesh, Nainital</h3>
+                <p>
+                    Uttarakhand offers sacred shrines, serene lakes, and Himalayan adventures. Seek blessings at
+                    Kedarnath and Badrinath, practice yoga in Rishikesh, and unwind by Nainital’s calm waters. Ideal
+                    for spirituality, trekking, and nature lovers.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Himachal Pradesh -->
+            <div class="card">
+                <img src="./Assets/Himachal Pradesh.png" alt="Himachal Pradesh">
+                <h2 class="card-title">Himachal Pradesh</h2>
+                <h3 class="card-location">Shimla, Manali, Dharamshala, Kullu</h3>
+                <p>
+                    Himachal Pradesh charms with snow-capped peaks, apple orchards, and cozy hill towns. Enjoy
+                    adventure sports in Manali, colonial vibes in Shimla, Tibetan culture in Dharamshala, and scenic
+                    valleys in Kullu. Perfect for year-round escapes.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Jammu & Kashmir (Including Ladakh) -->
+            <div class="card">
+                <img src="./Assets/Jammu Kashmir.png" alt="Jammu & Kashmir and Ladakh">
+                <h2 class="card-title">Jammu & Kashmir (Including Ladakh)</h2>
+                <h3 class="card-location">Srinagar, Gulmarg, Pahalgam, Leh–Ladakh</h3>
+                <p>
+                    From Kashmir’s shikara-studded lakes to Ladakh’s stark, high-altitude beauty, this region is
+                    unforgettable. Ski in Gulmarg, relax in Pahalgam’s valleys, and ride across Ladakh’s dramatic
+                    passes to monasteries and Pangong Lake.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Punjab -->
+            <div class="card">
+                <img src="./Assets/Punjab.png" alt="Punjab">
+                <h2 class="card-title">Punjab</h2>
+                <h3 class="card-location">Golden Temple (Amritsar), Wagah Border, Jallianwala Bagh</h3>
+                <p>
+                    Punjab radiates warmth, devotion, and hearty cuisine. Visit the serene Golden Temple, witness
+                    the Wagah Border ceremony, and reflect at Jallianwala Bagh. Enjoy lively Punjabi culture, music,
+                    and farm landscapes.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Gujarat -->
+            <div class="card">
+                <img src="./Assets/Gujarat.png" alt="Gujarat">
+                <h2 class="card-title">Gujarat</h2>
+                <h3 class="card-location">Gir National Park, Somnath, Dwarka, Rann of Kutch</h3>
+                <p>
+                    Gujarat is where wildlife, spirituality, and unique landscapes meet. Spot Asiatic lions in Gir,
+                    seek blessings at Somnath and Dwarka, and marvel at the endless white expanse of the Rann of
+                    Kutch. Vibrant crafts and festivals abound.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Maharashtra -->
+            <div class="card">
+                <img src="./Assets/Maharashtra.png" alt="Maharashtra">
+                <h2 class="card-title">Maharashtra</h2>
+                <h3 class="card-location">Mumbai, Ajanta & Ellora Caves, Mahabaleshwar, Shirdi</h3>
+                <p>
+                    Maharashtra spans cosmopolitan Mumbai, ancient cave art, hill retreats, and pilgrimage sites.
+                    Stroll along Marine Drive, explore Ajanta–Ellora’s rock-cut wonders, cool off in Mahabaleshwar,
+                    and visit Shirdi’s holy shrine.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Goa -->
+            <div class="card">
+                <img src="./Assets/Goa.png" alt="Goa">
+                <h2 class="card-title">Goa</h2>
+                <h3 class="card-location">Baga & Calangute Beaches, Basilica of Bom Jesus, Dudhsagar Waterfalls</h3>
+                <p>
+                    Goa mixes golden beaches, Portuguese heritage, and a laid-back vibe. Enjoy nightlife in Baga and
+                    Calangute, admire the Basilica of Bom Jesus, and trek to Dudhsagar’s cascading falls. Perfect
+                    for relaxation and adventure alike.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Kerala -->
+            <div class="card">
+                <img src="./Assets/Kerala.png" alt="Kerala">
+                <h2 class="card-title">Kerala</h2>
+                <h3 class="card-location">Alleppey, Munnar, Kochi, Wayanad</h3>
+                <p>
+                    Kerala’s backwaters, tea-clad hills, and rich culture captivate every traveler. Cruise
+                    houseboats in Alleppey, breathe fresh air in Munnar, explore Kochi’s heritage lanes, and spot
+                    wildlife in Wayanad’s forests.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Karnataka -->
+            <div class="card">
+                <img src="./Assets/Karnataka.png" alt="Karnataka">
+                <h2 class="card-title">Karnataka</h2>
+                <h3 class="card-location">Hampi, Mysore, Coorg, Bangalore</h3>
+                <p>
+                    Karnataka balances ancient ruins, royal splendor, coffee hills, and a tech-savvy capital. Wander
+                    Hampi’s UNESCO ruins, admire Mysore Palace, sip coffee in Coorg, and enjoy Bangalore’s parks and
+                    eateries.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Tamil Nadu -->
+            <div class="card">
+                <img src="./Assets/Tamil Nadu.png" alt="Tamil Nadu">
+                <h2 class="card-title">Tamil Nadu</h2>
+                <h3 class="card-location">Chennai, Mahabalipuram, Ooty, Kanyakumari</h3>
+                <p>
+                    Tamil Nadu showcases Dravidian temple architecture, hill stations, and coastal charm. Explore
+                    Chennai’s beaches, Mahabalipuram’s rock-cut wonders, cool Ooty’s misty slopes, and Kanyakumari’s
+                    meeting of three seas.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Telangana -->
+            <div class="card">
+                <img src="./Assets/Telangana.png" alt="Telangana">
+                <h2 class="card-title">Telangana</h2>
+                <h3 class="card-location">Charminar, Thousand Pillar Temple, Ramoji Film City</h3>
+                <p>
+                    Telangana blends Nizam-era heritage with modern attractions. Visit the iconic Charminar, admire
+                    the Thousand Pillar Temple, and tour the massive Ramoji Film City. Don’t miss Hyderabadi biryani
+                    and bustling bazaars.
+                </p>
+                <button>Explore</button>
+            </div>
+
+            <!-- Andhra Pradesh -->
+            <div class="card">
+                <img src="./Assets/Andhar Pradesh.png" alt="Andhra Pradesh">
+                <h2 class="card-title">Andhra Pradesh</h2>
+                <h3 class="card-location">Tirupati Balaji Temple, Araku Valley, Vizag Beach</h3>
+                <p>
+                    Andhra Pradesh offers revered temples, scenic valleys, and coastal relaxation. Seek blessings at
+                    Tirupati, ride through Araku’s lush hills, and unwind on Visakhapatnam’s beaches. A rich food
+                    culture adds to the experience.
+                </p>
+                <button>Explore</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <h2>Indian-Tourism</h2>
+        <p>India is one of the most diverse and culturally rich countries in the world.</p>
+        <p>Contact: <a href="mailto:support@indiantourism.in">support@indiantourism.in</a></p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        <p>&copy; 2023 Indian Tourism. All rights reserved.</p>
+    </footer>
+
+
+
+    <script>
+        function goTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>

@@ -2,22 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Tourism</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Amatic+SC:wght@400;700&family=Arizonia&family=Berkshire+Swash&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa:wght@300..700&family=Creepster&family=Dancing+Script:wght@400..700&family=Dawning+of+a+New+Day&family=Ephesis&family=Gloria+Hallelujah&family=Gravitas+One&family=Great+Vibes&family=Grenze+Gotisch:wght@100..900&family=Homemade+Apple&family=Hurricane&family=IM+Fell+DW+Pica:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Julius+Sans+One&family=Kaushan+Script&family=Kristi&family=Lexend+Deca:wght@100..900&family=Libre+Barcode+39&family=Manufacturing+Consent&family=Marck+Script&family=Merienda:wght@300..900&family=Monsieur+La+Doulaise&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mr+De+Haviland&family=Mrs+Saint+Delafield&family=Oleo+Script:wght@400;700&family=Outfit:wght@100..900&family=Parisienne&family=Patrick+Hand&family=Permanent+Marker&family=Pinyon+Script&family=Playwrite+AU+QLD:wght@100..400&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Qwigley&family=Rock+Salt&family=Rouge+Script&family=Rye&family=Sacramento&family=Satisfy&family=Smooch+Sans:wght@100..900&family=Sora:wght@100..800&family=Special+Elite&family=Syncopate:wght@400;700&family=Tangerine:wght@400;700&family=Unbounded:wght@200..900&family=VT323&family=Whisper&family=WindSong:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poiret+One&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
-</head>
-
-<body>
     <style>
         * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* enables smooth scroll for in-page anchors */
+        }
+
+        /* ---------- Generic buttons ---------- */
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity .2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
         }
 
         .centered-container {
@@ -37,6 +61,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .video-text-mask video {
@@ -49,6 +74,7 @@
             z-index: 1;
         }
 
+        /* top brand */
         .video-text-mask h2 {
             position: absolute;
             top: 30px;
@@ -62,6 +88,7 @@
             font-family: "Pinyon Script";
         }
 
+        /* nav */
         .video-text-mask ul {
             position: absolute;
             top: 100px;
@@ -87,7 +114,6 @@
         .video-text-mask h1 {
             position: relative;
             top: 80px;
-            /* Adjust as needed */
             z-index: 2;
             color: #fff;
             font-size: 4rem;
@@ -96,27 +122,23 @@
             font-family: "Kaushan Script";
         }
 
-        .video-text-mask button {
+        .video-text-mask .hero-btn {
             position: absolute;
             bottom: 100px;
             left: 50%;
             transform: translateX(-50%);
-            padding: 10px 20px;
-            font-size: 1.5rem;
-            color: #fff;
-            background: transparent;
-            border: 2px solid #fff;
-            border-radius: 5px;
-            cursor: pointer;
             z-index: 2;
         }
 
+        /* -------- ABOUT -------- */
         .About-Section {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0px 0;
-            height: 100vh;
+            padding: 40px 20px;
+            min-height: 100vh;
+            gap: 30px;
         }
 
         .About-Left {
@@ -127,11 +149,10 @@
             padding: 40px;
             color: #222;
             background: rgba(255, 255, 255, 0.85);
-            border-radius: 12px 0 0 12px;
+            border-radius: 12px;
             font-family: 'Poppins', sans-serif;
             font-size: 1.15rem;
             min-width: 300px;
-
         }
 
         .About-Header {
@@ -159,6 +180,10 @@
             font-weight: 250;
         }
 
+        .about-btn-wrap {
+            margin-top: 22px;
+        }
+
         .About-Right {
             flex: 1;
             min-width: 300px;
@@ -172,10 +197,11 @@
             border-radius: 12px 12px;
         }
 
+        /* -------- SERVICES -------- */
         .Services-Section {
             margin: 0;
             font-family: 'Poppins';
-            height: 100vh;
+            min-height: 100vh;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -213,155 +239,12 @@
             overflow: hidden;
         }
 
-        .Taj-Mahal-Card {
-            width: 22%;
-            min-width: 300px;
-            height: 480px;
-            background: white;
-            padding: 10px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .Taj-Mahal-Card-Image {
-            width: 100%;
-            border-radius: 12px;
-            max-height: 180px;
-            object-fit: cover;
-        }
-
-        .Taj-Mahal-Card-Title {
-            font-family: 'IM Fell DW Pica', cursive;
-            font-size: 24px;
-        }
-
-        .Taj-Mahal-Card-Location {
-            font-family: 'Sacramento', cursive;
-            font-size: 24px;
-            color: rgb(128, 126, 126);
-        }
-
-        .Taj-Mahal-Card p {
-            font-size: 13px;
-            color: #555;
-        }
-
-        .Taj-Mahal-Card button {
-            padding: 10px 20px;
-            font-size: 14px;
-            background-color: #000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .Charminar-Card {
-            width: 22%;
-            min-width: 260px;
-            height: 100%;
-            background: white;
-            padding: 10px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .Charminar-Card img {
-            width: 100%;
-            border-radius: 12px;
-            max-height: 180px;
-            object-fit: cover;
-
-        }
-
-        .Charminar-Title {
-            font-family: 'IM Fell DW Pica', cursive;
-            font-size: 24px;
-        }
-
-        .Charminar-Place {
-            font-family: 'Sacramento', cursive;
-            font-size: 24px;
-            color: rgb(128, 126, 126);
-        }
-
-        .Charminar-Card p {
-            font-size: 13px;
-            color: #555;
-        }
-
-        .Charminar-Card button {
-            padding: 10px 20px;
-            font-size: 14px;
-            background-color: #000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .Kedarnath-Card {
-            width: 22%;
-            min-width: 260px;
-            height: 100%;
-            background: white;
-            padding: 10px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .Kedarnath-Card img {
-            width: 100%;
-            border-radius: 12px;
-            max-height: 180px;
-            object-fit: cover;
-        }
-
-        .Kedarnath-Title {
-            font-family: 'IM Fell DW Pica', cursive;
-            font-size: 24px;
-        }
-
-        .Kedarnath-Place {
-            font-family: 'Sacramento', cursive;
-            font-size: 24px;
-            color: rgb(128, 126, 126);
-        }
-
-        .Kedarnath-Card p {
-            font-size: 13px;
-            color: #555;
-        }
-
-        .Kedarnath-Card button {
-            padding: 10px 20px;
-            font-size: 14px;
-            background-color: #000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
+        .Taj-Mahal-Card,
+        .Charminar-Card,
+        .Kedarnath-Card,
         .Badrinath-Card {
             width: 22%;
             min-width: 260px;
-            height: 100%;
             background: white;
             padding: 10px;
             border-radius: 20px;
@@ -372,6 +255,9 @@
             justify-content: space-between;
         }
 
+        .Taj-Mahal-Card-Image,
+        .Charminar-Card img,
+        .Kedarnath-Card img,
         .Badrinath-Card img {
             width: 100%;
             border-radius: 12px;
@@ -379,22 +265,34 @@
             object-fit: cover;
         }
 
+        .Taj-Mahal-Card-Title,
+        .Charminar-Title,
+        .Kedarnath-Title,
         .Badrinath-Title {
-            font-family: 'IM Fell DW Pica', cursive;
+            font-family: 'Poiret One';
             font-size: 24px;
         }
 
+        .Taj-Mahal-Card-Location,
+        .Charminar-Place,
+        .Kedarnath-Place,
         .Badrinath-Place {
-            font-family: 'Sacramento', cursive;
+            font-family: 'Poiret One';
             font-size: 24px;
             color: rgb(128, 126, 126);
         }
 
+        .Taj-Mahal-Card p,
+        .Charminar-Card p,
+        .Kedarnath-Card p,
         .Badrinath-Card p {
             font-size: 13px;
             color: #555;
         }
 
+        .Taj-Mahal-Card button,
+        .Charminar-Card button,
+        .Kedarnath-Card button,
         .Badrinath-Card button {
             padding: 10px 20px;
             font-size: 14px;
@@ -406,7 +304,59 @@
             margin-top: 10px;
         }
 
-        /* Responsive for Tablets (max-width: 1024px) */
+        /* -------- GALLERY -------- */
+        .gallery-header {
+            font-family: 'Poiret One', cursive;
+            font-size: 2.5rem;
+            color: #222;
+            padding: 40px 40px 20px;
+            background: #f7f7f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-btn {
+            background: #000;
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        .gallery-wrapper {
+            background: #f7f7f7;
+            padding-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-grid img {
+            width: 450px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* -------- FOOTER -------- */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Poppins';
+            margin-top: 80px;
+        }
+
+        /* ---------- Responsive ---------- */
+
+        /* Tablets (<= 1024px) */
         @media (max-width: 1024px) {
             .video-text-mask h1 {
                 font-size: 2.5rem;
@@ -422,7 +372,7 @@
 
             .About-Section {
                 flex-direction: column;
-                height: auto;
+                min-height: auto;
                 padding: 20px;
             }
 
@@ -462,41 +412,31 @@
             }
         }
 
-        /* Tablet & below */
+        /* Tablet & below (<= 768px) */
         @media (max-width: 768px) {
-
-            /* Let the services section grow vertically */
             .Services-Section {
-                height: auto;
+                min-height: auto;
                 overflow: visible;
             }
 
-            /* Stack all cards in one column */
             .Cards-Container {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 20px;
                 padding: 20px 45px;
-
             }
-
-            /* Adjust card img height */
 
             .Cards-Container>div img {
                 max-height: 300px;
             }
 
-
-
-            /* Catch ALL cards, no matter the class name */
             .Cards-Container>div {
                 width: 100% !important;
                 max-width: 100%;
-                height: 500px;
+                height: auto;
                 margin: 0;
             }
 
-            /* Optional: tighten texts/buttons for smaller widths */
             .Cards-Container>div p {
                 font-size: 0.95rem;
                 line-height: 1.6;
@@ -507,7 +447,7 @@
             }
         }
 
-        /* Small phones */
+        /* Phones (<= 480px) */
         @media (max-width: 480px) {
 
             html,
@@ -560,7 +500,7 @@
                 padding: 0 12px;
             }
 
-            .video-text-mask button {
+            .video-text-mask .hero-btn {
                 bottom: 40px;
                 font-size: 0.95rem;
                 padding: 6px 12px;
@@ -568,7 +508,7 @@
 
             .About-Section {
                 flex-direction: column;
-                height: auto;
+                min-height: auto;
                 padding: 16px 12px;
                 margin: 0 auto;
                 width: 100%;
@@ -582,18 +522,19 @@
                 margin: 0 auto;
             }
 
-            .Cards-Container {
-                padding: 16px 0;
-                /* Removed horizontal padding */
-                gap: 16px;
-                width: 100%;
-                margin: 0 auto;
+            .gallery-header {
+                padding: 24px 16px 12px;
+                font-size: 1.8rem;
             }
 
-            .Cards-Container>div {
-                width: 100% !important;
-                max-width: 100%;
-                margin: 0 auto;
+            .gallery-grid {
+                padding: 0 12px;
+                gap: 16px;
+            }
+
+            .gallery-grid img {
+                width: 100%;
+                height: auto;
             }
 
             footer {
@@ -604,35 +545,45 @@
             }
         }
     </style>
-    <div class="centered-container">
+</head>
+
+<body>
+
+    <!-- HERO / HOME -->
+    <div id="home" class="centered-container">
         <div class="video-text-mask">
-            <video src="TAJ MAHAL ● India 【4K】 Cinematic [2021] - 2160 (online-video-cutter.com) (1) (1) (1).mp4"
+            <video
+                src="./Assets/TAJ MAHAL ● India 【4K】 Cinematic [2021] - 2160 (online-video-cutter.com) (1) (1) (1).mp4"
                 autoplay loop muted playsinline></video>
+
             <h2>Indian-Tourism</h2>
+
+            <!-- Updated: menu links that scroll to sections -->
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#" onclick="goTo('Contact.html')">Contact</a></li>
             </ul>
+
             <h1>Let's Explore The India Together</h1>
-            <button>EXPLORE MORE CITIES</button>
+
+            <!-- Optional: direct to Services section -->
+            <button class="btn btn-outline hero-btn"
+                onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
+                EXPLORE MORE CITIES
+            </button>
         </div>
     </div>
-    <div class="About-Section">
+
+    <!-- ABOUT -->
+    <div id="about" class="About-Section">
         <div class="About-Left">
-            <h1 class="About-Header">
-                About Indian
-                Tourism
-            </h1>
+            <h1 class="About-Header">About Indian Tourism</h1>
             <p class="About-Description">
-                <span class="About-Description-Span">I</span>ndia,
-                a land of vibrant cultures, ancient
-                heritage,
-                and breathtaking
-                landscapes, offers an
-                unforgettable
+                <span class="About-Description-Span">I</span>ndia, a land of vibrant cultures, ancient
+                heritage, and breathtaking landscapes, offers an unforgettable
                 journey for every traveler. From the majestic Himalayas in the north to the serene backwaters of Kerala
                 in
                 the south, India is a tapestry of traditions, festivals, and architectural marvels. Explore iconic
@@ -644,36 +595,37 @@
             </p>
             <p class="About-Description-Bottom">
                 With its rich tapestry of cultures, languages, and traditions, India offers a unique blend of
-                experiences
-                that
+                experiences that
                 cater to every traveler's interests. From the bustling markets of Delhi to the serene beaches of Goa,
                 each
                 destination tells a story waiting to be explored.
             </p>
+
+            <!-- NEW: Explore More button to About.html -->
+            <div class="about-btn-wrap">
+                <button class="btn" onclick="goTo('About.html')">Explore More</button>
+            </div>
         </div>
+
         <div class="About-Right">
-            <img src="Most-Searched-Tourist-Places-in-India-2025.webp" alt="Indian Tourism" class="Image-tag">
+            <img src="./Assets/Most-Searched-Tourist-Places-in-India-2025.webp" alt="Indian Tourism" class="Image-tag">
         </div>
     </div>
 
-    <div class="Services-Section">
-
-        <!-- Header Section -->
+    <!-- SERVICES -->
+    <div id="services" class="Services-Section">
         <div class="Services-Header">
-            <h1 class="Services-h1">
-                Services-The Tourism Destination
-            </h1>
-            <button class="Show-All-Button">
-                Show All
-            </button>
+            <h1 class="Services-h1">Services</h1>
+            <!-- Kept your “Show All” style -->
+            <button class="Show-All-Button" onclick="goTo('Services.html')">Show All</button>
         </div>
 
-        <!-- Cards Container -->
+
         <div class="Cards-Container">
 
             <!-- Taj Mahal -->
             <div class="Taj-Mahal-Card">
-                <img src="steptodown.com472584.jpg" alt="Taj Mahal" class="Taj-Mahal-Card-Image">
+                <img src="./Assets/steptodown.com472584.jpg" alt="Taj Mahal" class="Taj-Mahal-Card-Image">
                 <h2 class="Taj-Mahal-Card-Title">Taj Mahal</h2>
                 <h2 class="Taj-Mahal-Card-Location">
                     Agra, Uttar
@@ -687,11 +639,10 @@
 
             <!-- Charminar -->
             <div class="Charminar-Card">
-                <img src="steptodown.com742862.jpg" alt="Charminar">
-                <h2 class="Charminar-Title" style="font-family: 'IM Fell DW Pica', cursive; font-size: 24px; ">Charminar
+                <img src="./Assets/steptodown.com742862.jpg" alt="Charminar">
+                <h2 class="Charminar-Title">Charminar
                 </h2>
-                <h2 class="Charminar-Place"
-                    style="font-family: 'Sacramento', cursive; font-size: 24px; color:rgb(128, 126, 126)">
+                <h2 class="Charminar-Place">
                     Hyderabad, Telangana</h2>
                 <p>Located in the heart of Hyderabad, the Charminar is a
                     16th-century mosque and monument known for its four grand minarets and vibrant local markets.</p>
@@ -702,7 +653,7 @@
 
             <!-- Kedarnath -->
             <div class="Kedarnath-Card">
-                <img src="steptodown.com450584.jpg" alt="Kedarnath">
+                <img src="./Assets/steptodown.com450584.jpg" alt="Kedarnath">
                 <h2 class="Kedarnath-Title">Kedarnath
                 </h2>
                 <h2 class="Kedarnath-Place">
@@ -716,7 +667,7 @@
 
             <!-- Badrinath -->
             <div class="Badrinath-Card">
-                <img src="steptodown.com551089.jpg" alt="Badrinath">
+                <img src="./Assets/steptodown.com551089.jpg" alt="Badrinath">
                 <h2 class="Badrinath-Title">Badrinath
                 </h2>
                 <h2 class="Badrinath-Place">
@@ -727,37 +678,34 @@
                     Explore
                 </button>
             </div>
-
         </div>
     </div>
 
-    <div style=" background: #f7f7f7;"></div>
-    <h1 style="font-family: 'Poiret One', cursive; font-size: 2.5rem; color: #222; padding:40px">
-        Gallery
-    </h1>
-    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-        <img src="steptodown.com292177.jpg" alt="Gallery Image 1"
-            style="width: 450px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-        <img src="steptodown.com953993.jpg" alt="Gallery Image 2"
-            style="width: 450px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-        <img src="steptodown.com779431.jpg" alt="Gallery Image 3"
-            style="width: 450px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery-wrapper">
+        <div class="gallery-header">
+            <span>Gallery</span>
+            <!-- NEW: Button that goes to Services.html -->
+            <button class="btn gallery-btn" onclick="goTo('Gallery.html')">See All Services</button>
+        </div>
 
-    </div>
-    </div>
+        <div class="gallery-grid">
+            <img src="./Assets/steptodown.com292177.jpg" alt="Gallery Image 1">
+            <img src="./Assets/steptodown.com953993.jpg" alt="Gallery Image 2">
+            <img src="./Assets/steptodown.com779431.jpg" alt="Gallery Image 3">
+        </div>
+    </section>
 
-    <footer
-        style="background: #000; color: #fff; text-align: center; padding: 20px; font-family: 'Poppins'; margin-top: 80px;">
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
         <h2 style="font-family: Pinyon Script ; font-weight: lighter; font-size:xx-large;">Indian-Tourism</h2>
         <p style="font-weight: 200; padding: 20px 0 20px 0 ;">India is one of the most diverse and culturally rich
-            countries
-            in the world,
-            making it a top destination for
+            countries in the world, making it a top destination for
             tourists from across the globe. From the snow-covered peaks of the Himalayas in the north to the serene
             beaches of Kerala in the south, India offers a wide variety of travel experiences.</p>
-        <div style="display: flex; justify-content: space-around; padding: 20px 0;">
-            <div>
 
+        <div style="display: flex; justify-content: space-around; padding: 20px 0; flex-wrap: wrap; gap: 16px;">
+            <div>
                 <p style="font-weight: 200;">Contact us: <a href="mailto:support@indiantourism.in"
                         style="color: #fff; text-decoration: none;">support@indiantourism.in</a></p>
                 <p style="font-weight: 200;">Follow us on:
@@ -774,23 +722,13 @@
             </div>
         </div>
         <p>&copy; 2023 Indian Tourism. All rights reserved.</p>
-
     </footer>
 
+    <script>
+        function goTo(page) {
+            window.location.href = page;
+        }
+    </script>
 </body>
 
 </html>
-
-
-<!-- Steps to add this project to GitHub -->
-<!--
-1. Create a GitHub account if you don't have one.
-2. On GitHub, click "New repository" and fill in the details (name, description, public/private).
-3. On your computer, open a terminal and navigate to your project folder.
-4. Run `git init` to initialize a local git repository.
-5. Run `git add .` to stage all files.
-6. Run `git commit -m "Initial commit"` to commit your files.
-7. Copy the repository URL from GitHub.
-8. Run `git remote add origin <your-repo-url>` to link your local repo to GitHub.
-9. Run `git push -u origin main` (or `master`) to upload your code.
--->

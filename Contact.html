@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Tourism – Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poiret+One&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --fg: #111;
+            --bg: #f0f0f0;
+            --brand: "Pinyon Script", cursive;
+            --heading: "Poiret One", sans-serif;
+            --body: "Poppins", sans-serif;
+            --radius: 16px;
+        }
+
+        /* ===== Base ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: var(--body);
+        }
+
+        /* ===== Header (responsive, non-overlapping) ===== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-family: var(--brand);
+            font-size: 2.4rem;
+            font-weight: 300;
+            line-height: 1;
+            color: #000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #050505;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color .2s;
+        }
+
+        nav a:hover {
+            color: #ff4c4c;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent);
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-container {
+            min-height: calc(100vh - 220px);
+            /* leave space for header/footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px 60px;
+        }
+
+        .contact-card {
+            width: 100%;
+            max-width: 760px;
+            background: linear-gradient(135deg, #000, #1523e7);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 30px 26px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+        }
+
+        .contact-title {
+            font-family: var(--heading);
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .contact-item span {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.1rem;
+            margin: 0 0 6px;
+            font-family: var(--heading);
+        }
+
+        .contact-item p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 1rem;
+            word-break: break-word;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .Feedback-btn {
+            padding: 10px;
+            border: 2px solid rgb(245, 243, 243);
+            border-radius: 25px;
+            background: transparent;
+            font-family: 'poppins';
+            color: #eaeaea;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .Feedback-btn:hover {
+            background: #fff;
+            color: #1523e7;
+            border-color: #fff;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 24px 0;
+            width: 100%;
+        }
+
+        footer h2 {
+            font-family: var(--brand);
+            font-weight: 300;
+            font-size: 2rem;
+            margin: 10px 0 6px;
+        }
+
+        footer p,
+        footer a {
+            color: #fff;
+            font-weight: 200;
+            text-decoration: none;
+            margin: 4px 0;
+            font-size: 0.95rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== BREAKPOINTS ====== */
+
+        /* Tablets (≤ 992px) */
+        @media (max-width: 992px) {
+            .brand {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            .contact-card {
+                padding: 26px 22px;
+            }
+        }
+
+        /* Mobiles (≤ 768px) */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            .brand {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                padding: 30px 16px 50px;
+            }
+
+            .contact-card {
+                padding: 22px 18px;
+            }
+
+            .contact-item {
+                flex-direction: row;
+                /* keep icon left, text right */
+                align-items: flex-start;
+            }
+
+            .contact-item span {
+                font-size: 1.4rem;
+            }
+
+            .contact-title {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* Small Mobiles (≤ 480px) */
+        @media (max-width: 480px) {
+            .brand {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+            }
+
+            .contact-item span {
+                margin-bottom: 6px;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">Indian‑Tourism</div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="goTo('Index.html')">Home</a></li>
+                    <li><a href="#" onclick="goTo('About.html')">About</a></li>
+                    <li><a href="#" onclick="goTo('Services.html')">Services</a></li>
+                    <li><a href="#" onclick="goTo('Gallery.html')">Gallery</a></li>
+                    <li><a href="#" onclick="goTo('Contact.html')" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <div class="contact-card">
+            <h2 class="contact-title">Contact Us</h2>
+
+            <!-- Phone -->
+            <div class="contact-item">
+                <span><i class="fa-solid fa-mobile-retro"></i></span>
+                <div>
+                    <h3>Mobile / Phone :</h3>
+                    <p>
+                        +968 71475111, +968 71475222, +968 93844225, <br />
+                        +968 98904447, +968 99497771, +968 72505897
+                    </p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+                <span><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                    <h3>Email :</h3>
+                    <p>
+                        <a href="mailto:supportindiantourism@gmail.com">supportindiantourism@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="contact-item">
+                <span><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                    <h3>Address :</h3>
+                    <p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Domalguda,Himayatnagar,Hyderabad-500029,Telangana,India"
+                            target="_blank">
+                            Domalguda, Himayatnagar, Hyderabad – 500029, Telangana, India
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <button class="Feedback-btn" onclick="goTo('Feedback.html')">
+                Send Feedback
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Indian-Tourism</h2>
+        <p>India is one of the most diverse and culturally rich countries in the world, making it a top destination for
+            tourists from across the globe.</p>
+        <p>Contact us: <a href="mailto:support@indiantourism.in">support@indiantourism.in</a></p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        <p>&copy; 2023 Indian Tourism. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        function goTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>
